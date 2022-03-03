@@ -62,6 +62,7 @@ function init() {
     inquirer
      .prompt(questions)
      .then((data) => {
+        //  console.log(markDwn);
         markDwn(data);
      });
 }

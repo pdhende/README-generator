@@ -5,6 +5,15 @@ function renderLicenseBadge(license) {
   if(license === "MIT") {
     lBadge = "https://img.shields.io/badge/license-MIT-brightgreen";
   }
+  else if(license === "Apache 2.0") {
+    lBadge = "https://img.shields.io/badge/license-Apache%202.0-blue";
+  }
+  else if(license === "GPL 3.0") {
+    lBadge = "https://img.shields.io/badge/license-GPL%203.0-red";
+  }
+  else if(license === "BSL 1") {
+    lBadge = "https://img.shields.io/badge/license-BSL%201-yellow";
+  }
   else {
     lBadge = '';
   }
