@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
-const markdown = require('./utils/generateMarkdown');
+const markDwn = require('./utils/generateMarkdown');
 
 // TODO: Create an array of questions for user input
 const questions = [{
@@ -18,7 +18,7 @@ const questions = [{
             type: "rawlist",
             name: "license",
             message: 'What license does the project have?',
-            choices : ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSD 3','None']
+            choices : ['MIT', 'Apache 2.0', 'GPL 3.0', 'BSL 1','None']
         },
         {
             type: "input",
@@ -41,6 +41,16 @@ const questions = [{
             name: "tests",
             message: 'What command should be executed to run the tests?',
             default: 'npm test',
+        },
+        {
+            type: "input",
+            name: "repoInfo",
+            message: 'What should the user need to know about using the repo?'
+        },
+        {
+            type: "input",
+            name: "repoCont",
+            message: 'What does the user need to know about contributing to the repo?',
         }
     ];
 
@@ -50,7 +60,10 @@ function writeToFile(fileName, data) {}
 // TODO: Create a function to initialize app
 function init() {
     inquirer
-     .prompt(questions);
+     .prompt(questions)
+     .then((data) => {
+        markDwn(data);
+     });
 }
 
 // Function call to initialize app
