@@ -63,7 +63,8 @@ function init() {
      .prompt(questions)
      .then((data) => {
         //  console.log(markDwn);
-        markDwn(data);
+       let readMeVal =  markDwn(data);
+       console.log(readMeVal);
      });
 }
 
