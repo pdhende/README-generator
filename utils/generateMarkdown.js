@@ -3,16 +3,16 @@
 function renderLicenseBadge(license) {
   let lBadge;
   if(license === "MIT") {
-    lBadge = "https://img.shields.io/badge/license-MIT-brightgreen";
+    lBadge = "https://img.shields.io/badge/license-MIT-brightgreen.svg";
   }
   else if(license === "Apache 2.0") {
-    lBadge = "https://img.shields.io/badge/license-Apache%202.0-blue";
+    lBadge = "https://img.shields.io/badge/license-Apache%202.0-blue.svg";
   }
   else if(license === "GPL 3.0") {
-    lBadge = "https://img.shields.io/badge/license-GPL%203.0-red";
+    lBadge = "https://img.shields.io/badge/license-GPL%203.0-red.svg";
   }
   else if(license === "BSL 1") {
-    lBadge = "https://img.shields.io/badge/license-BSL%201-yellow";
+    lBadge = "https://img.shields.io/badge/license-BSL%201-yellow.svg";
   }
   else {
     lBadge = '';
@@ -35,38 +35,41 @@ function generateMarkdown(data) {
   let lBadge = renderLicenseBadge(data.license);
   // let lLink = renderLicenseLink(data.license);
   // console.log(lBadge);
-  return `# ${data.title}
+  return `
+  # ${data.title}
     
-    ![license](lBadge)
+  ![license](${lBadge})
 
-    ## Table of contents
-    * [Description](#description)
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Screenshots](#screenshots)
-    * [Built with](#built-with)
-    * [How it works](#how-it-works)
-    * [Application URL](#application-url)
+  ## Table of contents
+  * [Description](#description)
+  * [Installation](#installation)
+  * [Usage](#usage)
+  * [Screenshots](#screenshots)
+  * [Built with](#built-with)
+  * [How it works](#how-it-works)
+  * [Application URL](#application-url)
 
-    ## Description
-      ${data.description}
+  ## Description
+
+  ${data.description}
     
-    ## Installation
-      To install and run the application use the following command/s :
+  ## Installation
+     
+  To install and run the application use the following command/s :
       
-      * ${data.installation}
+  * ${data.installation}
 
-    ## Usage
+  ## Usage
+  
+  ## Screenshots
+
+  ## How it works
     
-    ## Screenshots
+  ## How to contribute
 
-    ## How it works
-      
-    ## How to contribute
+  ## Tests
 
-    ## Tests
-
-    ## Contact
+  ## Contact
 `;
 }
 
