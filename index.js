@@ -28,16 +28,6 @@ const questions = [{
         },
         {
             type: "input",
-            name: "githubId",
-            message: 'What is your gitHub username?',
-        },
-        {
-            type: "input",
-            name: "emailId",
-            message: 'What is your email id?',
-        },
-        {
-            type: "input",
             name: "tests",
             message: 'What command should be executed to run the tests?',
             default: 'npm test',
@@ -51,6 +41,21 @@ const questions = [{
             type: "input",
             name: "repoCont",
             message: 'What does the user need to know about contributing to the repo?',
+        },
+        {
+            type: "input",
+            name: "fullName",
+            message: 'What is your full name?',
+        },
+        {
+            type: "input",
+            name: "githubId",
+            message: 'What is your gitHub username?',
+        },
+        {
+            type: "input",
+            name: "emailId",
+            message: 'What is your email id?',
         }
     ];
 

@@ -42,12 +42,18 @@ function generateMarkdown(data) {
 
   ## Table of contents
   * [Description](#description)
+
   * [Installation](#installation)
+
   * [Usage](#usage)
-  * [Screenshots](#screenshots)
-  * [Built with](#built-with)
-  * [How it works](#how-it-works)
-  * [Application URL](#application-url)
+
+  * [How to contribute](#how-to-contribute)
+
+  * [Tests](#tests)
+
+  * [License](#license)
+
+  * [Contact](#contact)
 
   ## Description
 
@@ -60,16 +66,27 @@ function generateMarkdown(data) {
   * ${data.installation}
 
   ## Usage
-  
-  ## Screenshots
 
-  ## How it works
-    
+  ${data.repoInfo}
+      
   ## How to contribute
+
+  Please feel free to contribute to the project. 
+  ${data.repoCont}
 
   ## Tests
 
+  To run test use following command :
+
+  * ${data.tests}
+
+  ## License
+
+  This project is licensed under the ${data.license} license.
+
   ## Contact
+  * Email : ${data.emailId}
+  * Github User Id : ${data.githubId}
 `;
 }
 
