@@ -1,7 +1,7 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// A function that returns a license badge and the license link based on which license is passed in
 // If there is no license, return an empty string
 function renderLicenseBadge(license) {
-  // let lBadge;
+  
   const licObj = {};
   if(license === "MIT") {
     licObj['lBadge'] = "https://img.shields.io/badge/license-MIT-brightgreen.svg";
@@ -20,29 +20,19 @@ function renderLicenseBadge(license) {
     licObj['lLink'] = "https://choosealicense.com/licenses/bsl-1.0/";
   }
   else {
-    licObj = {};
+    licObj['lBadge'] = "";
+    licObj['lLink'] = "";
   }
   return licObj;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
-
-// TODO: Create a function to generate markdown for README
+// A function to generate markdown for README
 function generateMarkdown(data) {
   let licenseObj = renderLicenseBadge(data.license);
-  // let lLink = renderLicenseLink(data.license);
-  // console.log(lBadge);
+
   return `
   # ${data.title}
-    
+
   ![license](${licenseObj.lBadge})
 
   ## Table of contents
@@ -58,7 +48,7 @@ function generateMarkdown(data) {
 
   * [License](#license)
 
-  * [Contact](#contact)
+  * [Questions](#questions)
 
   ## Description
 
@@ -89,7 +79,8 @@ function generateMarkdown(data) {
 
   This project is licensed under the [${data.license}](${licenseObj.lLink}) license.
 
-  ## Contact
+  ## Questions
+  For any additional questions please feel free to reach out to me at:
   * Email : ${data.emailId}
   * Github User Id : ${data.githubId}
 `;
